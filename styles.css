@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+header {
+    width: 100vw;
+    height: 3rem;
+    padding: 0.6rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+}
+
+header span {
+    width: 0px;
+    height: 5px;
+    background: white;
+    margin-top: 0.3rem;
+}
+
+#converter {
+    width: 40%;
+    padding: 0 0.6rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#converter span {
+    transition: 0.5s;
+    width: 100%;
+}
+
+#sec-1 {
+    color: rgb(4, 213, 250);
+}
+
+#links {
+    width: 40%;
+    padding: 0 0.6rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    padding: 3rem;
+}
+
+section * {
+    color: black;
+}
+
+#history * {
+    color: #3700ff;
+}
+
+section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+section label {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+section input {
+    margin-bottom: 20px;
+    padding: 0.6rem 0;
+    width: 60%;
+}
+
+section select {
+    margin-bottom: 20px;
+    width: 60%;
+    padding: 0.6rem 0;
+}
+
+.btn-box {
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.btn {
+    padding: 0.6rem 2rem;
+    border-radius: 80px;
+    background-color: rgb(2, 190, 224);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#outputUrl {
+    margin-top: 40px;
+    width: 75%;
+    overflow-wrap: break-word;
+}
+
+#previousLinks p {
+    margin-bottom: 1rem;
+}
+
+#history {
+    overflow-wrap: break-word;
+}
+
+#history button {
+    margin-top: 3rem;
+    color: white;
+}
+
+.mode img {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 60px;
+    border-radius: 50%;
+    /* box-shadow: -10px 8px 45px 2px rgb(0 0 0 / 69%); */
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+    .btn-box {
+        width: 100%;
+    }
+    section input {
+        width: 80%;
+    }
+    section select {
+        width: 80%;
+    }
+}

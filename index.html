@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Conversion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="body">
+    <header id="nav">
+        <div id="converter">
+            <h3 id="sec-1">URL Converter</h3>
+            <span id="bar-1"></span>
+        </div>
+        <div id="links">
+            <h3 id="sec-2">Previous Links</h3>
+            <span id="bar-2"></span>
+        </div>
+    </header>
+    <section id="main">
+        <div class="container" id="container">
+            <h1 id="txt-1">URL Conversion</h1>
+            <label for="inputUrl" id="txt-2">Enter the URL Copied From PW :</label>
+            <input type="text" id="input-FN" placeholder="File Name">
+            <select name="net" id="net">
+                <option value="720">720</option>
+                <option value="480">480</option>
+                <option value="360">360</option>
+            </select>
+            <input type="text" id="inputUrl" placeholder="PW Copied Link">
+            <div class="btn-box">
+                <button class="btn" id="convertButton">Convert</button>
+                <button class="btn" id="copyButton" style="display: none;">Copy</button>
+            </div>
+            <div id="outputUrl">
+                <p id="down"></p>
+            </div>
+        </div>
+    </section>
+    <section id="history" style="display: none;">
+        <div id="previousLinks"></div>
+        <button class="btn" id="clearButton">Clear Previous Links</button>
+        <h1 id="clearMsg" style="display: none;">History Cleared!!!</h1>
+    </section>
+    <div class="mode">
+        <img id="dark" src="moon.png" alt="Dark">
+        <img id="light" src="brightness.png" alt="light" style="display: none;">
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
