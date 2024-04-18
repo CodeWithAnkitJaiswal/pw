@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const bar2 = document.getElementById("bar-2");
     const inputUrlElement = document.getElementById("inputUrl");
     const inputFNElement = document.getElementById("input-FN");
-    const inputdrop = document.getElementById("net");
+    // const inputdrop = document.getElementById("net");
     const outputTextElementQuality = document.getElementById("down");
     const copyButton = document.getElementById("copyButton");
     const convertButton = document.getElementById("convertButton");
@@ -137,9 +137,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         const uniqueId = parts[3];
-        const inputNet = inputdrop.value;
+        // const inputNet = inputdrop.value;
         const inputFN = inputFNElement.value;
-        const convertedLink = `${inputFN}: https://d26g5bnklkwsh4.cloudfront.net/${uniqueId}/hls/${inputNet}/main.m3u8`;
+        const convertedLink = `${inputFN}: https://psitoffers.store/1dm.php?vid=${uniqueId}`;
 
         return [convertedLink, uniqueId];
     }
