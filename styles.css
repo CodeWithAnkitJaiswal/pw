@@ -143,6 +143,22 @@ section select {
     cursor: pointer;
 }
 
+
+
+@media screen and (max-width: 500px) {
+    .btn-box {
+        width: 100%;
+    }
+    section input {
+        width: 80%;
+    }
+    section select {
+        width: 80%;
+    }
+}
+
+
+
 .owner {
     bottom: 10vh;
     position: fixed;
@@ -155,16 +171,4 @@ strong {
     color: rgb(2, 190, 224);
     text-decoration: none;
     font-size: 18px;
-}
-
-@media screen and (max-width: 500px) {
-    .btn-box {
-        width: 100%;
-    }
-    section input {
-        width: 80%;
-    }
-    section select {
-        width: 80%;
-    }
 }
