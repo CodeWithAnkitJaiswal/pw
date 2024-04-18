@@ -143,13 +143,18 @@ section select {
     cursor: pointer;
 }
 
-.owner {
-    text-align: center;
-    width: 100%;
-    margin-top: 2rem;
+.owner-top {
+    display: none;
 }
 
-.owner a,
+.owner-bottom {
+    bottom: 10vh;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+.owner-bottom a,
 strong {
     color: rgb(0 171 255);
     text-decoration: none;
@@ -165,5 +170,20 @@ strong {
     }
     section select {
         width: 80%;
+    }
+    .owner-bottom {
+        display: none;
+    }
+    .owner-top {
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin-top: 2rem;
+    }
+    .owner-top a,
+    strong {
+        color: rgb(0 171 255);
+        text-decoration: none;
+        font-size: 18px;
     }
 }
