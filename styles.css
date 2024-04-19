@@ -161,6 +161,11 @@ strong {
     font-size: 18px;
 }
 
+strong {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+}
+
 @media screen and (max-width: 500px) {
     .btn-box {
         width: 100%;
@@ -185,5 +190,9 @@ strong {
         color: rgb(0 171 255);
         text-decoration: none;
         font-size: 18px;
+    }
+    strong {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
     }
 }
