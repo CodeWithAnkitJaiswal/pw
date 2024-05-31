@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const bar2 = document.getElementById("bar-2");
     const inputUrlElement = document.getElementById("inputUrl");
     const inputFNElement = document.getElementById("input-FN");
-    // const inputdrop = document.getElementById("net");
     const outputTextElementQuality = document.getElementById("down");
     const copyButton = document.getElementById("copyButton");
     const convertButton = document.getElementById("convertButton");
@@ -20,27 +19,24 @@ document.addEventListener("DOMContentLoaded", function() {
     const body = document.getElementById("body");
     const txt1 = document.getElementById("txt-1");
     const txt2 = document.getElementById("txt-2");
+    const previousLinksContainer = document.getElementById("previousLinks");
 
-    // dark mode
+    // Dark mode
     darkButton.addEventListener("click", function() {
-        lightButton.style = "display: block;";
-        darkButton.style = "display: none;";
-        body.style = "height: 100vh; background: black;";
-        txt1.style = "color: white;";
-        txt2.style = "color: white;";
+        lightButton.style.display = "block";
+        darkButton.style.display = "none";
+        body.style.background = "black";
+        txt1.style.color = "white";
+        txt2.style.color = "white";
     });
 
     lightButton.addEventListener("click", function() {
-        lightButton.style = "display: none;";
-        darkButton.style = "display: block;";
-        body.style = "height: 100vh; background: white;";
-        txt1.style = "color: black;";
-        txt2.style = "color: black;";
+        lightButton.style.display = "none";
+        darkButton.style.display = "block";
+        body.style.background = "white";
+        txt1.style.color = "black";
+        txt2.style.color = "black";
     });
-
-    // const showButton = document.getElementById("showButton");
-    const previousLinksContainer = document.getElementById("previousLinks");
-
 
     // Load previously converted links from local storage
     let previousLinks = JSON.parse(localStorage.getItem("previousLinks")) || [];
@@ -57,11 +53,18 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to display the list of previous links
     function displayPreviousLinks() {
         previousLinksContainer.innerHTML = "";
-        previousLinks.forEach((link) => {
-            const linkElement = document.createElement("p");
-            linkElement.textContent = `${link}`;
-            previousLinksContainer.appendChild(linkElement);
-        });
+        if (previousLinks.length === 0) {
+            clearMsg.style.display = "inline";
+            clearButton.style.display = "none";
+        } else {
+            previousLinks.forEach((link) => {
+                const linkElement = document.createElement("p");
+                linkElement.textContent = link;
+                previousLinksContainer.appendChild(linkElement);
+            });
+            clearMsg.style.display = "none";
+            clearButton.style.display = "inline";
+        }
     }
 
     // Display previous links on page load
@@ -69,34 +72,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Click On converter
     sectionLinks.addEventListener("click", function() {
-        sectionText1.style = "color: white;";
-        sectionText2.style = "color: rgb(4, 213, 250); transition-delay: 0.25s;";
-        bar2.style = "transition: 0.5s; width: 100%;";
-        bar1.style = "transition: 0.5s; width: 0;";
-        sectionMain.style = "display: none;";
-        historyLink.style = "display: block;";
+        sectionText1.style.color = "white";
+        sectionText2.style.color = "rgb(4, 213, 250)";
+        bar2.style.width = "100%";
+        bar1.style.width = "0";
+        sectionMain.style.display = "none";
+        historyLink.style.display = "block";
     });
 
     sectionConverter.addEventListener("click", function() {
-        sectionText2.style = "color: white;";
-        sectionText1.style = "color: rgb(4, 213, 250); transition-delay: 0.25s;";
-        bar1.style = "transition: 0.5s; width: 100%;";
-        bar2.style = "transition: 0.5s; width: 0;";
-        sectionMain.style = "display: block;";
-        historyLink.style = "display: none;";
+        sectionText2.style.color = "white";
+        sectionText1.style.color = "rgb(4, 213, 250)";
+        bar1.style.width = "100%";
+        bar2.style.width = "0";
+        sectionMain.style.display = "block";
+        historyLink.style.display = "none";
     });
 
     convertButton.addEventListener("click", function() {
         const inputUrl = inputUrlElement.value;
         const [convertedLink] = convertUrl(inputUrl);
 
-        outputTextElementQuality.textContent = `${convertedLink}`;
+        outputTextElementQuality.textContent = convertedLink;
         copyButton.setAttribute("data-clipboard-text-qlt", convertedLink); // Set the text to copy
-        clearMsg.style = "display: none;";
+        clearMsg.style.display = "none";
 
         // Update the list of previous links and display them      
         if (convertedLink !== "Invalid input URL") {
-            outputTextElementQuality.textContent = `${convertedLink}`;
+            outputTextElementQuality.textContent = convertedLink;
             copyButton.style.display = "block"; // Show the copy button
             copyButton.setAttribute("data-clipboard-text-qlt", convertedLink); // Set the text to copy
             clearButton.style.display = "inline";
@@ -124,11 +127,9 @@ document.addEventListener("DOMContentLoaded", function() {
         previousLinks = [];
         localStorage.removeItem("previousLinks");
         displayPreviousLinks();
-        container.style = "justify-content: center;";
-        clearButton.style = "display: none;";
-        clearMsg.style = "display: inline; color: rgb(2, 190, 224)";
+        clearMsg.style.display = "inline";
+        clearMsg.style.color = "rgb(2, 190, 224)";
     });
-
 
     function convertUrl(inputUrl) {
         const parts = inputUrl.split('/');
@@ -137,9 +138,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         const uniqueId = parts[3];
-        // const inputNet = inputdrop.value;
         const inputFN = inputFNElement.value;
-        const convertedLink = `${inputFN}: https://psitoffers.store/1dm.php?vid=${uniqueId}`;
+        const convertedLink = `${inputFN}: https://penpencilvod.pc.cdn.bitgravity.com/${uniqueId}/master.m3u8`;
 
         return [convertedLink, uniqueId];
     }
