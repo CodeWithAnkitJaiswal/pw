@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const uniqueId = parts[3];
         const inputFN = inputFNElement.value;
-        const convertedLink = `${inputFN}: https://penpencilvod.pc.cdn.bitgravity.com/${uniqueId}/master.m3u8`;
+        const convertedLink = `${inputFN}: https://pw-url-api.onrender.com/process?v=https://d1d34p8vz63oiq.cloudfront.net/${uniqueId}/master.mpd&quality=720`;
 
         return [convertedLink, uniqueId];
     }
